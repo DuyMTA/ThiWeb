@@ -1,0 +1,311 @@
+﻿@*@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags 
+     Title 
+    <title>Cây cảnh &amp; Chậu cảnh</title>
+
+     Favicon 
+    <link rel="icon" href="~/Content/asset/img/core-img/favicon.ico">
+
+     Core Stylesheet 
+    <link rel="stylesheet" href="~/Content/asset/style.css">
+</head>
+ </head> 
+
+<body>
+     Preloader 
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img">
+            <img src="~/Content/asset/img/core-img/leaf.png" alt="">
+        </div>
+    </div>
+
+     ##### Header Area Start ##### 
+    <header class="header-area">
+
+         ***** Top Header Area ***** 
+        <div class="top-header-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="top-header-content d-flex align-items-center justify-content-between">
+                             Top Header Content 
+                            <div class="top-header-meta">
+                                <a href="mailto:boycac0123@gmail.com" data-toggle="tooltip" data-placement="bottom" title="boycac0123@gmail.com">
+                                    <i class="fa fa-envelope-o" aria-hidden="true"></i> <span>
+                                        Email: boycac0123@gmail.com
+                                    </span>
+                                </a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Điện thoại: 083 275 4691</span></a>
+                            </div>
+
+                             Top Header Content 
+                            <div class="top-header-meta d-flex">
+                                 Login 
+                                <div class="login">
+                                    <a href="#"><i class="fa fa-user" aria-hidden="true"></i> <span>Đăng nhập</span></a>
+                                </div>
+                                 Cart 
+                                <div class="cart">
+                                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Xe hàng<span class="cart-quantity">(1)</span></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         ***** Navbar Area ***** 
+        <div class="alazea-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                     Menu 
+                    <nav class="classy-navbar justify-content-between" id="alazeaNav">
+
+                         Nav Brand 
+                        <a href="/Home/Index" class="nav-brand"><img src="~/Content/asset/img/core-img/logo.png" alt=""></a>
+
+                         Navbar Toggler 
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                         Menu 
+                        <div class="classy-menu">
+
+                             Close Button 
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                             Navbar Start 
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="/Home/Index">Trang chủ</a></li>
+                                    <li><a href="/Home/About">Giới thiệu</a></li>
+                                    <li><a href="/Blog/Index">Bài viết</a></li>
+                                    <li>
+                                        <a href="#">Trang</a>
+                                        <ul class="dropdown">
+                                            <li><a href="/Home/Index">Trang chủ</a></li>
+                                            <li><a href="/Home/About">Giới thiệu</a></li>
+                                            <li>
+                                                <a href="/Shop/Index">Gian hàng</a>
+                                                <ul class="dropdown">
+                                                    <li><a href="/Shop/Index">Gian hàng</a></li>
+                                                    <li><a href="/Shop/ShopDetails">Chi tiết sản phẩm</a></li>
+                                                    <li><a href="/Shop/ShopCart">Chọn hàng</a></li>
+                                                    <li><a href="/Shop/ShopCheckout">Đặt hàng</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="/Blog/Index">Bài viết</a>
+                                                <ul class="dropdown">
+                                                    <li><a href="/Blog/Index">Bài viết</a></li>
+                                                    <li><a href="single-post.html">Chi tiết bài viết</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="/Home/Contact">Liên lạc</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/Shop/Index">Gian hàng</a>
+                                        <ul class="dropdown">
+                                            <li><a href="/Shop/ShopDetails">Chi tiết sản phẩm</a></li>
+                                            <li><a href="/Shop/ShopCart">Chọn hàng</a></li>
+                                            <li><a href="/Shop/ShopCheckout">Đặt hàng</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/Home/Contact">Liên lạc</a></li>
+                                </ul>
+
+                                 Search Icon 
+                                <div id="searchIcon">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </div>
+
+                            </div>
+                             Navbar End 
+                        </div>
+                    </nav>
+
+                     Search Form 
+                    <div class="search-form">
+                        <form action="#" method="get">
+                            <input type="search" name="search" id="search" placeholder="Nhập từ khóa &amp; ấn enter...">
+                            <button type="submit" class="d-none"></button>
+                        </form>
+                         Close Icon 
+                        <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+     ##### Header Area End #####*@ 
+    @RenderBody();
+     @*##### Footer Area Start ##### 
+    <footer class="footer-area bg-img" style="background-image: url(/Content/asset/img/bg-img/3.jpg);">
+         Main Footer Area 
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+
+                     Single Footer Widget 
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-logo mb-30">
+                                <a href="/Home/Index"><img src="~/Content/asset/img/core-img/logo.png" alt=""></a>
+                            </div>
+                            <p>Theo dõi chúng tớ.</p>
+                            <div class="social-info">
+                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                     Single Footer Widget 
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h5>TRUY CẬP NHANH</h5>
+                            </div>
+                            <nav class="widget-nav">
+                                <ul>
+                                    <li><a href="#">Lựa hàng</a></li>
+                                    <li><a href="#">Hồi đáp</a></li>
+                                    <li><a href="#">Thanh toán</a></li>
+                                    <li><a href="#">Tin tức</a></li>
+                                    <li><a href="#">Trả lại</a></li>
+                                    <li><a href="#">Quảng cáo</a></li>
+                                    <li><a href="#">Vận chuyển</a></li>
+                                    <li><a href="#">Nghề nghiệp</a></li>
+                                    <li><a href="#">Đặt hàng</a></li>
+                                    <li><a href="#">Các quy tắc</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                     Single Footer Widget 
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h5>BÁN CHẠY NHẤT</h5>
+                            </div>
+
+                             Single Best Seller Products 
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail">
+                                    <a href="/Shop/ShopDetails"><img src="~/Content/asset/img/bg-img/4.jpg" alt=""></a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="/Shop/ShopDetails">Xương rồng</a>
+                                    <p>220.000 đ</p>
+                                </div>
+                            </div>
+
+                             Single Best Seller Products 
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail">
+                                    <a href="/Shop/ShopDetails"><img src="~/Content/asset/img/bg-img/5.jpg" alt=""></a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="/Shop/ShopDetails">Tulip</a>
+                                    <p>240.000 đ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     Single Footer Widget 
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h5>LIÊN LẠC</h5>
+                            </div>
+
+                            <div class="contact-information">
+                                <p><span>Địa chỉ:</span> 236 Hoàng Quốc Việt-Cổ Nhuế 1-Bắc Từ Liêm-Hà Nội</p>
+                                <p><span>Điện thoại:</span> 083 275 4691</p>
+                                <p><span>Email:</span> boycac0123@gmail.com</p>
+                                <p><span>Giờ mở cửa:</span> Thứ 2 - Chủ nhật: 8h đến 21h</p>
+                                <p><span>Giờ đặc biệt:</span> Thứ 7: 14h đến 16h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         Footer Bottom Area 
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="border-line"></div>
+                    </div>
+                     Copywrite Text 
+                    <div class="col-12 col-md-6">
+                        <div class="copywrite-text">
+                            <p>
+                                &copy;  Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. 
+                                Bản quyền &copy;
+                                <script>document.write(new Date().getFullYear());</script>. Đã đăng ký bản quyền | Template này được làm bởi <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                 Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. 
+                            </p>
+                        </div>
+                    </div>
+                     Footer Nav 
+                    <div class="col-12 col-md-6">
+                        <div class="footer-nav">
+                            <nav>
+                                <ul>
+                                    <li><a href="/Home/Index">Trang chủ</a></li>
+                                    <li><a href="/Home/About">Thông tin</a></li>
+                                    <li><a href="#">Dịch vụ</a></li>
+                                    <li><a href="/Shop/Index">Quầy hàng</a></li>
+                                    <li><a href="/Blog/Index">Bài viết</a></li>
+                                    <li><a href="/Home/Contact">Liên lạc</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+     ##### Footer Area End ##### 
+     ##### All Javascript Files ##### 
+     jQuery-2.2.4 js 
+    <script src="~/Content/asset/js//jquery/jquery-2.2.4.min.js"></script>
+     Popper js 
+    <script src="~/Content/asset/js/bootstrap/popper.min.js"></script>
+     Bootstrap js 
+    <script src="~/Content/asset/js/bootstrap/bootstrap.min.js"></script>
+     All Plugins js 
+    <script src="~/Content/asset/js/plugins/plugins.js"></script>
+     Active js 
+    <script src="~/Content/asset/js/active.js"></script>
+     more script go here 
+    @RenderSection("js", required: false)
+</body>
+
+</html>*@

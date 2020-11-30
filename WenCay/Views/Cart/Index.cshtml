@@ -1,0 +1,144 @@
+﻿@model List<WenCay.Models.Function.CartItem>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+@section jsFooter{
+
+    <script src="~/Content/asset/js/jquery/controller/cartController.js"></script>
+}
+<div class="breadcrumb-area">
+    <!-- Top Breadcrumb Tiny -->
+    <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(../Content/asset/img/bg-img/24.jpg);">
+        <h2>Cart</h2>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Trang Chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Giỏ Hàng</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ##### Breadcrumb Tiny End ##### -->
+<!-- ##### Cart Tiny Start ##### -->
+<div class="cart-area section-padding-0-100 clearfix">
+    <div class="container">
+        @if (Model.Count > 0)
+        {
+            <div class="row">
+                <div class="col-12">
+                    <div class="cart-table clearfix">
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th>SẢN PHẨM</th>
+                                    <th>SỐ LƯỢNG</th>
+                                    <th>GIÁ TIỀN</th>
+                                    <th>TỔNG TIỀN</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="cart_product_img">
+                                            <a href="#"><img src="@item.SanPham.Anh" alt="Product"></a>
+                                            <h5>@item.SanPham.TenSP</h5>
+                                        </td>
+                                        @*<td class="qty">
+                                                <div class="quantity">
+                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                                    <input type="number" class="qty-text" id="qty" step="1" min="1" max="99" name="quantity" value="1">
+                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                                </div>
+                                            </td>*@
+                                        <td><input type="text" class="txtQuantity" data-id="@item.SanPham.ID" value="@item.SoLuong"> </td>
+                                        <td class="price"><span>@item.SanPham.Gia.GetValueOrDefault(0).ToString("N0") đ</span></td>
+                                        <td class="total_price"><span>@((item.SanPham.Gia.GetValueOrDefault(0) * item.SoLuong).ToString("N0")) đ</span></td>
+                                        <td class="action"><a href="#" data-id="@item.SanPham.ID" class="btn-delete"><i class="icon_close"></i></a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+
+                        <button id="btnContinue" class="btn">Tiếp tục mua hàng</button>
+                        <button id="btnUpdate" class="btn">Cập nhật giỏ hàng</button>
+                        <button id="btnDeleteAll" class="btn">Xoá giỏ hàng</button>
+                        <button id="btnPayment" class="btn">Thanh toán</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- Coupon Discount -->
+                <div class="col-12 col-lg-6">
+                    <div class="coupon-discount mt-70">
+                        <h5>Mã giảm giá</h5>
+                        <p>Phiếu giảm giá có thể được áp dụng trong giỏ hàng trước khi thanh toán. Thêm mặt hàng đủ điều kiện từ gian hàng của người bán đã tạo mã phiếu giảm giá vào giỏ hàng của bạn. Nhấp vào nút "Áp dụng mã" màu xanh lá cây để thêm phiếu giảm giá vào đơn hàng của bạn. Tổng đơn hàng sẽ cập nhật để chỉ ra khoản tiết kiệm cụ thể cho mã phiếu giảm giá đã nhập.</p>
+                        <form action="#" method="post">
+                            <input type="text" name="coupon-code" placeholder="Nhập mã giảm giá">
+                            <button type="submit">Áp dụng mã</button>
+                        </form>
+                    </div>
+                </div>
+                @{ 
+                    int k = 0;
+                    foreach (var item in Model)
+                    {
+                        k += (item.SanPham.Gia.GetValueOrDefault(0) * item.SoLuong);
+                    }
+                }
+                <!-- Cart Totals -->
+                <div class="col-12 col-lg-6">
+                    <div class="cart-totals-area mt-70">
+                        <h5 class="title--">Giỏ Hàng</h5>
+                        <div class="subtotal d-flex justify-content-between">
+                            <h5>Giá sản phẩm</h5>
+                            <h5 style="font-weight: 500;">@k.ToString("N0") đ</h5>
+                        </div>
+                        <div class="shipping d-flex justify-content-between">
+                            <h5>Shipping</h5>
+                            <div class="shipping-address">
+                                <form action="#" method="post">
+                                    <select class="custom-select">
+                                        <option selected>Tỉnh</option>
+                                        <option value="1">Hà Nội</option>
+                                        <option value="2">Hồ Chí Minh</option>
+                                        <option value="3">Thái Nguyên</option>
+                                        <option value="4">Đà Nẵng</option>
+                                    </select>
+                                    <input type="text" name="shipping-text" id="shipping-text" placeholder="Thị xã">
+                                    <input type="text" name="shipping-zip" id="shipping-zip" placeholder="Phường">
+                                    <button type="submit">Cập nhật</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="total d-flex justify-content-between">
+                            <h5>Tổng tiền</h5>
+                            <h5 style="font-weight: 500;">@((k+30000).ToString("N0")) đ</h5>
+                        </div>
+                        <div class="checkout-btn">
+                            <a href="#" class="btn alazea-btn w-100">KIỂM TRA ĐƠN HÀNG</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    }
+                    else
+                    {
+            <span class="alert alert-danger"> Chưa có sản phẩm nào trong giỏ </span>
+        }
+    </div>
+</div>
+<!-- ##### Cart Tiny End ##### -->

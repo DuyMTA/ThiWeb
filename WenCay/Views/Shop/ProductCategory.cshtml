@@ -1,0 +1,25 @@
+﻿@model IDictionary<WenCay.Models.Entity.THELOAI, int>
+@{
+    var Tong = ViewBag.Tong;
+}
+<!-- Shop Widget -->
+<div class="shop-widget catagory mb-50">
+    <h4 class="widget-title">Thể loại</h4>
+    <div class="widget-desc">
+        <!-- Single Checkbox -->
+        <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
+            <input type="checkbox" class="custom-control-input" id="customCheck0">
+            <a href="~/Shop/Index/0" class="custom-control-label" for="customCheck0">Tất cả <span class="text-muted">(@Tong)</span></a>
+        </div>
+        @foreach (var item in Model)
+        {
+            string temp = "customCheck" + Convert.ToString(item.Key.TenTheLoai);
+            string link = "/Shop/Index/" + item.Key.MaTheLoai;
+            <!-- Single Checkbox -->
+            <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
+                <input type="checkbox" class="custom-control-input" id=@temp>
+                <a href=@link class="custom-control-label" for=@temp>@item.Key.TenTheLoai<span class="text-muted">(@item.Value)</span></a>
+            </div>
+        }
+    </div>
+</div>

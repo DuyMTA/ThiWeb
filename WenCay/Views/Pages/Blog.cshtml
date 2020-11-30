@@ -1,0 +1,226 @@
+﻿
+    @{
+        ViewBag.Title = "Blog";
+        var blog = ViewBag.blog;
+        Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    }
+@using WenCay.Models.Entity;
+    <!-- ##### Breadcrumb Tiny Start ##### -->
+    <div class="breadcrumb-area">
+        <!-- Top Breadcrumb Tiny -->
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(../Content/asset/img/bg-img/24.jpg);">
+            <h2>BLOG</h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Trang chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcrumb Tiny End ##### -->
+    <!-- ##### Blog Tiny Start ##### -->
+    <section class="alazea-blog-area mb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="row">
+                        @foreach (var item in blog)
+                              {
+                                 <!-- Single Blog Post Tiny -->
+                                 <div class="col-12 col-lg-6">
+                                     <div class="single-blog-post mb-50">
+                                        <div class="post-thumbnail mb-30">
+                                            <a href="/Pages/BlogDetail/@item.ID"><img src="@item.Anh" alt=""></a>
+                                        </div>
+                                        <div class="post-content">
+                                            <a href="/Pages/BlogDetail/@item.ID" class="post-title">
+                                                <h5>@item.TieuDe</h5>
+                                            </a>
+                                            <div class="post-meta">
+                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> @item.ThoiGian</a>
+                                                <a href="#"><i class="fa fa-user" aria-hidden="true"></i> @item.TenNguoiViet</a>
+                                            </div>
+                                            <p class="post-excerpt">@item.LoiDan</p>
+                                        </div>
+                                      </div>
+                                 </div>
+                              }
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <nav aria-label="Page navigation">
+                                 <ul class="pagination">
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
+                                 </ul>
+                            </nav>
+                         </div>
+                    </div>
+                </div>
+
+                    <div class="col-12 col-md-4">
+                        <div class="post-sidebar-area">
+
+                            <!-- ##### Single Widget Tiny ##### -->
+                            <div class="single-widget-area">
+                                <form action="#" method="get" class="search-form">
+                                    <input type="search" name="search" id="widgetsearch" placeholder="Search...">
+                                    <button type="submit"><i class="icon_search"></i></button>
+                                </form>
+                            </div>
+
+                            <!-- ##### Single Widget Tiny ##### -->
+                            <div class="single-widget-area">
+                                <!-- Title -->
+                                <div class="widget-title">
+                                    <h4>Bài viết gần đây</h4>
+                                </div>
+
+                                <!-- Single Latest Posts -->
+                                <div class="single-latest-post d-flex align-items-center">
+                                    <div class="post-thumb">
+                                        <img src="../Content/asset/img/bg-img/30.jpg" alt="">
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="#" class="post-title">
+                                            <h6>Choáng ngợp với cây sung "Long mã hồi đầu" tiền tỷ nằm trên đỉnh núi đá quý nhân tạo của đại gia Thái Nguyên</h6>
+                                        </a>
+                                        <a href="#" class="post-date">20 Jun 2020</a>
+                                    </div>
+                                </div>
+
+                                <!-- Single Latest Posts -->
+                                <div class="single-latest-post d-flex align-items-center">
+                                    <div class="post-thumb">
+                                        <img src="../Content/asset/img/bg-img/31.jpg" alt="">
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="#" class="post-title">
+                                            <h6>Siêu cây "Ngai vàng đất Việt” hàng chục tỷ đồng khiến giới chơi cây "sửng sốt"</h6>
+                                        </a>
+                                        <a href="#" class="post-date">20 Jun 2020</a>
+                                    </div>
+                                </div>
+
+                                <!-- Single Latest Posts -->
+                                <div class="single-latest-post d-flex align-items-center">
+                                    <div class="post-thumb">
+                                        <img src="../Content/asset/img/bg-img/32.jpg" alt="">
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="#" class="post-title">
+                                            <h6>Cận cảnh cây duối cổ dáng Lão mai 400 tuổi giá tiền tỷ của ông thợ mộc ở Phú Thọ</h6>
+                                        </a>
+                                        <a href="#" class="post-date">20 Jun 2020</a>
+                                    </div>
+                                </div>
+
+                                <!-- Single Latest Posts -->
+                                <div class="single-latest-post d-flex align-items-center">
+                                    <div class="post-thumb">
+                                        <img src="../Content/asset/img/bg-img/33.jpg" alt="">
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="#" class="post-title">
+                                            <h6>"Đại gia" sở hữu thiên tuế "Thiên cổ trường tồn" tuổi đời khoảng 1.000 năm tuổi ở Hà Nội là ai?</h6>
+                                        </a>
+                                        <a href="#" class="post-date">20 Jun 2020</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ##### Single Widget Tiny ##### -->
+                            <div class="single-widget-area">
+                                <!-- Title -->
+                                <div class="widget-title">
+                                    <h4>Từ khóa liên quan</h4>
+                                </div>
+                                <!-- Tags -->
+                                <ol class="popular-tags d-flex flex-wrap">
+                                    <li><a href="#">CÂY</a></li>
+                                    <li><a href="#">SẢN PHẨM MỚI</a></li>
+                                    <li><a href="#">THIẾT KẾ</a></li>
+                                    <li><a href="#">TIN TỨC</a></li>
+                                    <li><a href="#">XU HƯỚNG</a></li>
+                                    <li><a href="#">VIDEO</a></li>
+                                    <li><a href="#">THIẾT KẾ VƯỜN</a></li>
+                                </ol>
+                            </div>
+
+                            <!-- ##### Single Widget Tiny ##### -->
+                            <div class="single-widget-area">
+                                <!-- Title -->
+                                <div class="widget-title">
+                                    <h4>BÁN CHẠY NHẤT</h4>
+                                </div>
+
+                                <!-- Single Best Seller Products -->
+                                <div class="single-best-seller-product d-flex align-items-center">
+                                    <div class="product-thumbnail">
+                                        <a href="shop-details.html"><img src="../Content/asset/img/bg-img/4.jpg" alt=""></a>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="shop-details.html">Xương rồng</a>
+                                        <p>220.000 đ</p>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Single Best Seller Products -->
+                                <div class="single-best-seller-product d-flex align-items-center">
+                                    <div class="product-thumbnail">
+                                        <a href="shop-details.html"><img src="../Content/asset/img/bg-img/5.jpg" alt=""></a>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="shop-details.html">Hoa Tulip</a>
+                                        <p>240.000 đ</p>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Single Best Seller Products -->
+                                <div class="single-best-seller-product d-flex align-items-center">
+                                    <div class="product-thumbnail">
+                                        <a href="shop-details.html"><img src="../Content/asset/img/bg-img/34.jpg" alt=""></a>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="shop-details.html">Chậu cây</a>
+                                        <p>500.000 đ</p>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </section>
+    <!-- ##### Blog Tiny End ##### -->
